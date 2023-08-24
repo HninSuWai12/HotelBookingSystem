@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RoomController;
+use App\Http\Controllers\User\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,7 +25,9 @@ Auth::routes(['verify' => true]);
 
 Route::middleware(['auth', 'user-access:user' , 'verified'])->group(function () {
   
-    Route::get('/home', [HomeController::class, 'index'])->name('home');
+    Route::get('/home', [UserController::class, 'index'])->name('home');
+    Route::get('detail/{id}',[UserController::class, 'detail'])->name('detail');
+
 });
   
 /*------------------------------------------

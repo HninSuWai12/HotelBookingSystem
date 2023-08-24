@@ -30,12 +30,6 @@
                     @endauth
                 </div>
             @endif
-            <div class="">
-                <form action="{{route('logout')}}" method="POST">
-                @csrf
-                <button type="submit" class="btn btn-info">Logout</button>
-                </form>
-            </div>
 
             <div class="max-w-7xl mx-auto p-6 lg:p-8">
                 <div class="flex justify-center">
