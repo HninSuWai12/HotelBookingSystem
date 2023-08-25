@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BookingController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -27,6 +28,12 @@ Route::middleware(['auth', 'user-access:user' , 'verified'])->group(function () 
   
     Route::get('/home', [UserController::class, 'index'])->name('home');
     Route::get('detail/{id}',[UserController::class, 'detail'])->name('detail');
+    Route::get('rooms',[UserController::class,'search'])->name('search');
+
+    //Booking
+    Route::get('booking',[BookingController::class,'book'])->name('bookView');
+    Route::post('booking',[BookingController::class,'booking'])->name('booking');
+
 
 });
   

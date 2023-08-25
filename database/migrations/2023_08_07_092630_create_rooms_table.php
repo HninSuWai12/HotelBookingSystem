@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('room_name');
             $table->integer('price');
             $table->integer('size');
-            $table->integer('capacity');
+            $table->enum('capacity',['1','2','3','4','5','6','7','8','9']);
             $table->string('service');
             $table->string('bed',);
             $table->longText('description');

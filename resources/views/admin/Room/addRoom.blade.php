@@ -46,9 +46,19 @@
                     @enderror
                    </div>
             </div>
+            
+                    
             <div class="mb-3">
-                <label for="">Capacity</label>
-                <input type="text" name="capacity" class="form-control">
+                <label for="capacity">Capacity</label>
+                <select id="capacity" name="capacity" class="form-control">
+                    <option value="">Choose Amount</option>
+                    @foreach ($capacity as $capacityName => $capacityValue)
+
+                        <option value="{{ $capacityValue }}">{{ $capacityName }}</option>
+                    @endforeach
+                </select>
+            </div>
+            
                 <div class="mt-3">
                     @error('capacity')
                     <div class="alert alert-danger">{{ $message }}</div>
@@ -69,6 +79,15 @@
                 <input type="text" name="bed" class="form-control">
                 <div class="mt-3">
                     @error('bed')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+                   </div>
+            </div>
+            <div class="mb-3">
+                <label for="">Description</label>
+               <textarea name="description" id="" cols="30" rows="10" class="form-control"></textarea>
+                <div class="mt-3">
+                    @error('service')
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                    </div>

@@ -19,6 +19,7 @@ return new class extends Migration
             $table->date('end_date');
             $table->enum('amount',['1','2','3','4','5','6','7','8','9']);
             $table->string('room_type');
+            $table->integer('room_count');
             $table->timestamps();
         });
     }

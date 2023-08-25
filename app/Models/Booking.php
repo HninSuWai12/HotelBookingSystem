@@ -13,7 +13,7 @@ class Booking extends Model
 
       protected $fillable=[
         'user_id','room_id','start_date','end_date',
-        'amount','room_type'
+        'amount','room_type','room_count',
       ];
 
       public static function getAmount(){
@@ -33,8 +33,8 @@ class Booking extends Model
     public function user(){
         return $this->belongsTo(User::class);
     }
-    public function room(){
-        return $this->belongsTo(Room::class);
+    public function rooms(){
+        return $this->hasMany(Room::class);
     }
 
 }

@@ -16,7 +16,8 @@ class RoomController extends Controller
         return view('admin.Room.room',compact('room'));
     }
     public function addRoom(){
-        return view('admin.Room.addRoom');
+        $capacity=Room::getCapacity();
+        return view('admin.Room.addRoom',compact('capacity'));
     }
     public function uploadData(Request $request){
        $data= $this->validationCheck($request,"create");
@@ -91,7 +92,8 @@ class RoomController extends Controller
             'size'=>$request->size,
             'capacity'=>$request->capacity,
             'service'=>$request->service,
-            'bed'=>$request->bed
+            'bed'=>$request->bed,
+            'description'=>$request->description
         ];
     }
 
@@ -103,7 +105,8 @@ class RoomController extends Controller
             'size'=>'required',
             'capacity'=>'required',
             'service'=>'required',
-            'bed'=>'required'
+            'bed'=>'required',
+            'description'=>'required'
         ];
         // $validationCheck['image']=$action == "create" ? "required|mimes:png,jpeg,webp,jpg,jfif|file" : "mimes:png,jpeg,webp,jpg,jfif|file";
         // Validator::make($request->all(),$validationCheck)->validate();

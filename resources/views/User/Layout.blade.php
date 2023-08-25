@@ -106,6 +106,7 @@
                                 <a href="#"><i class="fa fa-twitter"></i></a>
                                 <a href="#"><i class="fa fa-tripadvisor"></i></a>
                                 <a href="#"><i class="fa fa-instagram"></i></a>
+                               
                             </div>
                             <a href="#" class="bk-btn">Booking Now</a>
                             <div class="language-option">
@@ -138,7 +139,7 @@
                             <nav class="mainmenu">
                                 <ul>
                                     <li class="active"><a href="./index.html">Home</a></li>
-                                    <li><a href="./rooms.html">Rooms</a></li>
+                                    <li><a href="{{route('search')}}">Rooms</a></li>
                                     <li><a href="./about-us.html">About Us</a></li>
                                     <li><a href="./pages.html">Pages</a>
                                         <ul class="dropdown">
@@ -150,6 +151,12 @@
                                     </li>
                                     <li><a href="./blog.html">News</a></li>
                                     <li><a href="./contact.html">Contact</a></li>
+                                    <li>
+                                        <form action="{{route('logout')}}" method="POST">
+                                            @csrf
+                                            <input type="submit" value="Logout">
+                                            </form>
+                                    </li>
                                 </ul>
                             </nav>
                             <div class="nav-right search-switch">

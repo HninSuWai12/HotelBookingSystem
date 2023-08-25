@@ -14,7 +14,8 @@
             <div class="col-xl-4 col-lg-5 offset-xl-2 offset-lg-1">
                 <div class="booking-form">
                     <h3>Booking Your Hotel</h3>
-                    <form action="#">
+                    <form action="{{route('search')}}" method="GET">
+                        @csrf
                         <div class="check-date">
                             <label for="date-in">Check In:</label>
                             <input type="text" class="date-input" id="date-in">
@@ -27,19 +28,25 @@
                         </div>
                         <div class="select-option">
                             <label for="guest">Guests:</label>
-                            <select id="guest">
-                                <option value="">2 Adults</option>
-                                <option value="">3 Adults</option>
-                            </select>
+                           <select name="capacity" id="" class="form-control">
+                            <option value="">Choose Amount</option>
+                            @foreach ($capacity as $capacityName=>$capacityValue)
+                            <option value="{{$capacityValue}}">{{$capacityName}}</option>
+                                
+                            @endforeach
+                           </select>
                         </div>
                         <div class="select-option">
                             <label for="room">Room:</label>
-                            <select id="room">
-                                <option value="">1 Room</option>
-                                <option value="">2 Room</option>
+                            <select id="room" name="room">
+                                <option value="">Choose Room</option>
+                               @foreach ($room as $roomName)
+                                   <option value="{{$roomName->room_name}}">{{$roomName->room_name}}</option>
+                               @endforeach
+                                
                             </select>
                         </div>
-                        <button type="submit">Check Availability</button>
+                        <button type="submit">Search</button>
                     </form>
                 </div>
             </div>
