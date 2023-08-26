@@ -10,7 +10,7 @@
                             <input type="text" class="date-input" id="date-in" name="startDate">
                             <i class="icon_calendar"></i>
                             <div class="mt-3">
-                                @error('satrtDate')
+                                @error('startDate')
                                 <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                                </div>
@@ -21,6 +21,34 @@
                             <i class="icon_calendar"></i>
                             <div class="mt-3">
                                 @error('endDate')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+                               </div>
+                        </div>
+
+                        <div class="">
+                            <label for="">Name</label>
+                            <input type="text" name="name" class="form-control">
+                            <div class="mt-3">
+                                @error('name')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+                               </div>
+                        </div>
+                        <div class="">
+                            <label for="">Email</label>
+                            <input type="email" name="email" class="form-control">
+                            <div class="mt-3">
+                                @error('email')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+                               </div>
+                        </div>
+                        <div class="">
+                            <label for="">Phone Number</label>
+                            <input type="number" name="phoneNumber" class="form-control">
+                            <div class="mt-3">
+                                @error('phoneNumber')
                                 <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                                </div>

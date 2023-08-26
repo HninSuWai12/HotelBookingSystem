@@ -12,8 +12,8 @@ class Booking extends Model
       use HasFactory;
 
       protected $fillable=[
-        'user_id','room_id','start_date','end_date',
-        'amount','room_type','room_count',
+        'start_date','end_date',
+        'amount','room_type','room_count','name','email','phone_number',
       ];
 
       public static function getAmount(){

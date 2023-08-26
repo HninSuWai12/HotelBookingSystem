@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Booking;
 use App\Models\Room;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
@@ -81,6 +82,11 @@ class RoomController extends Controller
         $data->delete();
         return back()->with(['delete'=>'Delete Success']);
        
+    }
+    //View User Booked
+    public function userBooked(){
+        $book=Booking::get();
+        return view('admin.viewBooked',compact('book'));
     }
 
     //RequestStoreData

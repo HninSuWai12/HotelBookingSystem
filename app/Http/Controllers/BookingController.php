@@ -31,6 +31,9 @@ private function validationCheck($request){
     $data=[
         'startDate'=>'required',
         'endDate'=>'required',
+        'name'=>'required',
+        'email'=>'required',
+        'phoneNumber'=>'required',
         'guest'=>'required',
         'roomType'=>'required',
         'RoomCount'=>'required',
@@ -45,8 +48,11 @@ private function requestData($request){
         'end_date'=>$request->endDate,
         'amount'=>$request->guest,
         'room_type'=>$request->roomType,
-        'room_count'=>$request->roomCount,
-        'user_id'=>Auth::user()->name,
+        'room_count'=>$request->RoomCount,
+        'name'=>$request->name,
+        'email'=>$request->email,
+        'phone_number'=>$request->phoneNumber,
+        
 
     ];
 }

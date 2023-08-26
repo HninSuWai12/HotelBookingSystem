@@ -21,7 +21,7 @@
                                     <i class="icon_star"></i>
                                     <i class="icon_star-half_alt"></i>
                                 </div>
-                                <a href="{{route('bookView',$detail->id)}}">Booking Now</a>
+                                <a href="{{route('bookView')}}">Booking Now</a>
                             </div>
                         </div>
                         <h2>{{$detail->price}}<span>/Pernight</span></h2>

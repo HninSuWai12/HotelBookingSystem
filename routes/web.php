@@ -54,6 +54,8 @@ Route::middleware(['auth', 'user-access:admin' ])->group(function () {
     Route::get('edit/{id}',[RoomController::class,'edit'])->name('admin.edit');
     Route::post('update/{id}',[RoomController::class,'update'])->name('admin.update');
     Route::get('delete/{id}',[RoomController::class,'delete'])->name('admin.delete');
+    Route::get('userBooked',[RoomController::class,'userBooked'])->name('userBooked');
+
     });
 });
   
